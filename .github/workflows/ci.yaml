@@ -7,9 +7,11 @@ on:
 
 jobs:
   build:
+    name: Verificando_Aplicacao
     runs-on: ubuntu-latest
 
     steps:
+    
       - name: Checkout code
         uses: actions/checkout@v2
 
