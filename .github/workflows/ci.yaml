@@ -13,7 +13,7 @@ jobs:
     steps:
     
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Node.js
         uses: actions/setup-node@v3
@@ -26,9 +26,7 @@ jobs:
       - name: Run tests
         run: npm test
 
-      - name: Run SonarCloud analysis
-        uses: SonarSource/sonarcloud-github-action@v1
-        with:
-          projectBaseDir: .
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
